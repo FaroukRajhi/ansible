@@ -15,12 +15,12 @@
  
     - name: Copy your index file
       template:
-        src: "./index.html"
+        src: "files/index-template.html"
         dest: "/var/www/{{ http_host }}/index.html"
  
     - name: Set up virtuahHost
       template:
-        src: "apache2.conf"
+        src: "files/apache-template.conf"
         dest: "/etc/apache2/sites-available/{{ http_conf }}"
  
     - name: Enable site
